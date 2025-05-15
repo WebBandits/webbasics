@@ -12,18 +12,17 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+		<div class="footer-content">
+			<div class="container">
+
+			</div>
+		</div>
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'webbandits' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'webbandits' ), 'WordPress' );
-				?>
-			</a>
+			<div class="container">
+			&copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>
 			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'webbandits' ), 'webbandits', '<a href="http://webbandits.nl">WebBandits</a>' );
-				?>
+			Made by <a href="https://webbandits.nl" target="_blank" rel="noopener">WebBandits</a>
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

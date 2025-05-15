@@ -8,6 +8,9 @@ object {
 img {
 	height: auto; // Make sure images are scaled correctly.
 	max-width: 100%; // Adhere to container width.
+	-webkit-user-drag: none;
+	user-select: none;
+	pointer-events: auto; /* keeps click functionality */
 }
 
 figure {

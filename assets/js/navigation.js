@@ -6,9 +6,16 @@
  */
 ( function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
+	const siteBody = document.querySelector( 'body' );
+	const siteHtml = document.querySelector( 'html' );
 
 	// Return early if the navigation doesn't exist.
 	if ( ! siteNavigation ) {
+		return;
+	}
+
+	// Return early if the body doesn't exist.
+	if ( ! siteBody ) {
 		return;
 	}
 
@@ -34,6 +41,8 @@
 	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
 	button.addEventListener( 'click', function() {
 		siteNavigation.classList.toggle( 'toggled' );
+		siteBody.classList.toggle( 'toggled' );
+		siteHtml.classList.toggle( 'toggled' );
 
 		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
 			button.setAttribute( 'aria-expanded', 'false' );

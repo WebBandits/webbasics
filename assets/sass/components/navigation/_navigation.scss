@@ -46,6 +46,12 @@
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
+			display: flex;
+    		flex-flow: column;
+			gap: 0;
+			li{
+				background: $white;
+			}
 		}
 	}
 
@@ -54,18 +60,24 @@
 
 		&:hover > a,
 		&.focus > a {
+			color: $primary-color;
 		}
 	}
 
 	a {
 		display: block;
 		text-decoration: none;
+		color: $color__text-main;
+		padding: .5em;
+		text-transform: uppercase;
+    	font-weight: 600;
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		color: $primary-color;
 	}
 }
 
@@ -75,6 +87,48 @@
 	display: block;
 }
 
+.menu-toggle{
+	float: right;
+	position: relative;
+    z-index: 99;
+	.line{
+		display: block;
+		width: 2em;
+		height: 0.25em;
+		margin: 0.5em auto;
+		background-color: $color__text-main;
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+.main-navigation.toggled{
+	overflow: hidden;
+	button{
+		.line:nth-child(1){
+			transform: rotate(45deg) translate(0.55em, 0.5em);
+		}
+		.line:nth-child(2){
+			opacity: 0;
+		}
+		.line:nth-child(3){
+			transform: rotate(-45deg) translate(0.55em, -0.5em);
+		}
+	}
+	.menu-hoofdmenu-container{
+		position: absolute; 
+		width: 100%;
+    	left: 0;
+		margin-top: 4.5em;
+		ul.nav-menu{
+			background: $white;
+			padding: 0 1em;
+			height: 100vh;
+		}
+	}
+}
+
+
+
 @media screen and (min-width: 37.5em) {
 
 	.menu-toggle {
@@ -83,6 +137,8 @@
 
 	.main-navigation ul {
 		display: flex;
+		justify-content: center;
+		gap: 1.5em;
 	}
 }
 
