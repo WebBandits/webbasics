@@ -1,4 +1,17 @@
 header.site-header{
-    box-shadow: 0 .5rem 1rem #00000026,inset 0 -1px #ffffff26;
-    padding: 1em 0;
+    padding: 1.5em 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transform: translateY(0);
+    transition:  0.3s ease-in-out;
+    &.scrolled{
+        backdrop-filter: blur(5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1490196078), inset 0 -1px rgb(8 25 80 / 15%);
+        position: fixed;
+        transition:  0.3s ease-in-out;
+
+    }
 }

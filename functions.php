@@ -143,6 +143,14 @@ function webbandits_scripts() {
 
 	wp_enqueue_script( 'webbandits-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
 
+	wp_enqueue_script(
+			'main-script', // Handle
+			get_template_directory_uri() . '/assets/js/main.js', // Path to the JS file
+			array('jquery'), // Dependencies (optional)
+			null, // Version (optional)
+			true // Load in footer
+		);
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

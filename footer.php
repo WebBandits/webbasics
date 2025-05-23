@@ -21,7 +21,7 @@
 			<div class="container">
 			&copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>
 			<span class="sep"> | </span>
-			Made by <a href="https://webbandits.nl" target="_blank" rel="noopener">WebBandits</a>
+			Made by <a class="webbandits" href="https://webbandits.nl" target="_blank" rel="noopener">WebBandits</a>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

@@ -11,7 +11,7 @@ footer.entry-footer{
             font-size: 1rem;
             font-weight: 600;
             color: white;
-            background-color: $primary-color; 
+            background: linear-gradient(90deg,rgba(18, 109, 255, 1) 0%, rgba(11, 65, 153, 1) 100%);
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -31,17 +31,48 @@ footer.entry-footer{
 }
 
 footer.site-footer{
-   
+    position: relative;
     .site-info{
-        background: $secondary-color;
+        background: $dark;
         padding: 1em 0;
         text-align: center;
+        color: #272b44;
         a{
             text-decoration: none;
-            color: #404040;
+            color: #272b44;
             transition: ease-in-out 0.3s;
-            &:hover{
-                color: $primary-color;
+            // &:hover{
+            //     color: $primary-color;
+            // }
+            &.webbandits{
+                transition: all 0.3s ease;
+                cursor: pointer;
+                position: relative;
+                &:before {
+                    content: attr(data-text);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: linear-gradient(270deg, #ff00c8, #00ffe7, #fffc00, #ff00c8);
+                    background-size: 600% 600%;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: none;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                &:hover::before {
+                    animation: gradientMove 3s ease infinite;
+                    opacity: 1;
+                }
+                &:hover {
+                    color: transparent;
+                }
+                @keyframes gradientMove {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
             }
         }
     }
